@@ -6,8 +6,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_app/screens/screen1.dart';
 import 'package:flutter_app/screens/screen2.dart';
 import 'package:flutter_app/screens/screen3.dart';
+import 'package:flutter_app/loginpage.dart';
 
 class BottomNavBar extends StatefulWidget {
+
   const BottomNavBar({super.key});
 
   @override

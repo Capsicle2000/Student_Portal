@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_app/bottomnavbar.dart';
 
 class Loginpage extends StatefulWidget {
+
   const Loginpage({super.key});
 
   @override
@@ -10,7 +11,6 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -72,7 +72,8 @@ class _LoginpageState extends State<Loginpage> {
         ),
         SizedBox(height: 10),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context,'/bottomnavbar.');          },
           child: Text(
             "Login",
             style: TextStyle(fontSize: 20),

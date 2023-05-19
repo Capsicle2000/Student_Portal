@@ -95,8 +95,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/bottomnavbar.dart';
 import 'package:flutter_app/loginpage.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -110,13 +108,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
-      home:Loginpage(),
+      initialRoute: '/loginpage',
       routes: {
-        '/login': (context) => Loginpage(),
-        '/BottomNavBar': (context) => BottomNavBar(),
+        '/loginpage': (context) => Loginpage(),
+        '/bottomnavbar': (context) => BottomNavBar(),
       },
     );
   }
