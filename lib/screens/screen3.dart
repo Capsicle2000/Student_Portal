@@ -18,7 +18,7 @@ class Screen3 extends StatelessWidget {
         SizedBox(height: 20),
         CircleAvatar(
         radius: 60,
-        backgroundImage: AssetImage('assets/profile_pic.jpg'),
+        backgroundImage: AssetImage('images/images.png'),
         ),
         SizedBox(height: 10),
         Text(

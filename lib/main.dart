@@ -91,8 +91,10 @@
 //     );
 //   }
 // }
-import 'package:flutter_app/bottomnavbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/bottomnavbar.dart';
+import 'package:flutter_app/loginpage.dart';
+
 
 
 void main() {
@@ -111,7 +113,11 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:BottomNavBar(),
+      home:Loginpage(),
+      routes: {
+        '/login': (context) => Loginpage(),
+        '/BottomNavBar': (context) => BottomNavBar(),
+      },
     );
   }
 }
