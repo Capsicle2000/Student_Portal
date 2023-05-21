@@ -14,6 +14,8 @@ class Loginpage extends StatefulWidget {
 class _LoginpageState extends State<Loginpage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _passwordVisible = false;
+
   Future login() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
@@ -120,6 +122,8 @@ class _LoginpageState extends State<Loginpage> {
 //     );
 //   }
 // }
+
+
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Center(
@@ -150,7 +154,13 @@ class _LoginpageState extends State<Loginpage> {
                     ),
                   ),
 
+
+
                   SizedBox(height: 50),
+
+
+
+
 
                   // Email TextField
                   Padding(
@@ -165,13 +175,17 @@ class _LoginpageState extends State<Loginpage> {
                           controller: _emailController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Email',
+                            labelText: 'Email',
                           ),
                         ),
                       ),
                     ),
                   ),
                   SizedBox(height: 10),
+
+
+
+
 
                   // Password TextField
                   Padding(
@@ -184,31 +198,54 @@ class _LoginpageState extends State<Loginpage> {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: TextField(
                           controller: _passwordController,
-                          obscureText: true,
+                          obscureText: !_passwordVisible,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Password',
+                            labelText: 'Password',
+                            suffixIcon: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    _passwordVisible = !_passwordVisible;
+                                  });
+                                },
+                                child: InkResponse(
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.blue,
+                                  child: Icon(
+                                    _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
 
+
                   SizedBox(height: 150),
+
+
+
 
                   // Login Button
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: GestureDetector(
+                    child: InkWell(
                       onTap: login,
-                      child: Container(
-                        padding: EdgeInsets.all(16),
+                      borderRadius: BorderRadius.circular(12),
+                      child: Ink(
+                        padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                            color: Colors.blueAccent[400],
-                            borderRadius: BorderRadius.circular(12)),
+                          color: Colors.blueAccent[400],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
                         child: Center(
                           child: Text(
-                            'Sign in',
+                            'Log in',
                             style: GoogleFonts.poppins(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -232,7 +269,7 @@ class _LoginpageState extends State<Loginpage> {
                           color: Colors.black,
                         ),
                       ),
-                      GestureDetector(
+                      InkWell(
                         onTap: openRegisterScreen,
                         child: Text(
                           'Register Now',
@@ -240,7 +277,7 @@ class _LoginpageState extends State<Loginpage> {
                             color: Colors.blueAccent,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   )
                 ],

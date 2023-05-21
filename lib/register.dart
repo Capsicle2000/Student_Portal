@@ -13,6 +13,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  bool _passwordVisible = false;
+  bool _confirmPasswordVisible = false;
+
+
 
   Future register() async {
     if(passwordConfirmed()){
@@ -104,7 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           controller: _emailController,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Email',
+                            labelText: 'Email',
                           ),
                         ),
                       ),
@@ -124,16 +128,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.grey[100],
-                          borderRadius: BorderRadius.circular(12)
-                      ),
+                          borderRadius: BorderRadius.circular(12)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: TextField(
-                          controller: _confirmPasswordController,
-                          obscureText: true,
+                          controller: _passwordController,
+                          obscureText: !_passwordVisible,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Password',
+                            labelText: 'Password',
+                            suffixIcon: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    _passwordVisible = !_passwordVisible;
+                                  });
+                                },
+                                child: InkResponse(
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.blue,
+                                  child: Icon(
+                                    _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -153,16 +173,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.grey[100],
-                          borderRadius: BorderRadius.circular(12)
-                      ),
+                          borderRadius: BorderRadius.circular(12)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: TextField(
-                          controller: _passwordController,
-                          obscureText: true,
+                          controller: _confirmPasswordController,
+                          obscureText: !_confirmPasswordVisible,
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Confirm Password',
+                            labelText: 'Confirm Password',
+                            suffixIcon: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    _confirmPasswordVisible = !_confirmPasswordVisible;
+                                  });
+                                },
+                                child: InkResponse(
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.blue,
+                                  child: Icon(
+                                    _confirmPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -176,23 +212,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
 
 
-                  // Login Button
+                  // Create Account Button
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal:25),
-                    child: GestureDetector(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: InkWell(
                       onTap: register,
-                      child: Container(
-                        padding: EdgeInsets.all(16) ,
+                      borderRadius: BorderRadius.circular(12),
+                      child: Ink(
+                        padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                            color: Colors.blueAccent[400] ,
-                            borderRadius: BorderRadius.circular(12) ) ,
-                        child: Center(child: Text('Register',
-                          style: GoogleFonts.poppins(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
+                          color: Colors.blueAccent[400],
+                          borderRadius: BorderRadius.circular(12),
                         ),
+                        child: Center(
+                          child: Text(
+                            'Create Account',
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -200,9 +240,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
 
                   SizedBox(height: 5),
-
-
-
 
 
 

@@ -28,49 +28,49 @@ class _CoursesState extends State<Courses> {
   final List<Map<String, dynamic>> courses = [
     {
       'title': 'Data Structures',
-      'instructor': 'John Doe',
+      'Dr.': 'Ahmed Younes',
       // 'icon': 'Icon(Icons.logout)',
       'ID': 'CS108',
     },
     {
       'title': 'Algorithms',
-      'instructor': 'Jane Smith',
+      'Dr.': 'Ahmed Sherif',
       //'image': 'https://picsum.photos/200',
       'ID': 'CS107',
     },
     {
       'title': 'Web Development  ',
-      'instructor': 'Bob Johnson',
+      'Dr.': 'Islam Kabbani',
       //'image': 'https://picsum.photos/200',
       'ID': 'CS106',
     },
     {
       'title': 'Mobile App Development ',
-      'instructor': 'Bob Johnson',
+      'Dr.': 'Mohamed ElKholy',
       // 'image': 'https://picsum.photos/200',
       'ID': 'CS105',
     },
     {
       'title': 'Web Software Engineering ',
-      'instructor': 'Bob Johnson',
+      'Dr.': 'Mohamed ElKholy',
       //'image': 'https://picsum.photos/200',
       'ID': 'CS104',
     },
     {
       'title': 'Ai For Game ',
-      'instructor': 'Bob Johnson',
+      'Dr.': 'Ghada Kadous',
       //'image': 'https://picsum.photos/200',
       'ID': 'CS103',
     },
     {
       'title': 'Computer programming ',
-      'instructor': 'Bob Johnson',
+      'Dr.': 'Hatem Abdelkader',
       // 'image': 'https://picsum.photos/200',
       'ID': 'CS102',
     },
     {
       'title': 'Software engineering',
-      'instructor': 'Bob Johnson',
+      'Dr.': 'Ghada Kadous',
       //'image': 'https://picsum.photos/200',
       'ID': 'CS101',
     },
@@ -155,7 +155,7 @@ class _CoursesState extends State<Courses> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         color: Colors.white, // Set background color
-                        elevation: 4,
+                        elevation: 2,
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         child: ListTile(
                           leading: Icon(
@@ -172,7 +172,7 @@ class _CoursesState extends State<Courses> {
                             ),
                           ),
                           subtitle: Text(
-                            'Instructor: ${_foundCourses[index]['instructor']}',
+                            'Dr. ${_foundCourses[index]['Dr.']}',
                             style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.grey, // Set text color

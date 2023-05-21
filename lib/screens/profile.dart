@@ -69,7 +69,7 @@ class Profile extends StatelessWidget {
                         Icon(Icons.location_on, color: Colors.white),
                         SizedBox(width: 8.0),
                         Text(
-                          'New York, NY',
+                          'Alexandria, EG',
                           style: TextStyle(
                             fontSize: 16.0,
                             color: Colors.white,
@@ -99,7 +99,7 @@ class Profile extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey[700],
+                        color: Colors.blue,
                       ),
                     ),
                     ////////////////////////////////////////////
@@ -170,7 +170,7 @@ class Profile extends StatelessWidget {
                         ),
                       ],
                     ),
-
+                    //////////////////////////////////////
 
                     ////////////////////////////////////////////
 
@@ -279,7 +279,7 @@ class Profile extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey[700],
+                        color: Colors.blue,
                       ),
                     ),
                     SizedBox(height: 16.0),
